@@ -2,9 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { useLang } from "@/lib/LanguageContext";
-import { dict, locationList } from "@/lib/i18n";
+import { dict, locationList, type LocationEntry } from "@/lib/i18n";
 import { SearchIcon } from "./icons";
 import { Reveal } from "./Reveal";
+import { LocationModal } from "./LocationModal";
 
 // USPS ZIP3 prefix ranges for the DC/MD/VA metro: coarse (state-level), not
 // per-branch, so a real ZIP falls back to "same region" rather than no match.
@@ -22,6 +23,7 @@ const stateRegion = { md: "md", va: "va", dc: "dc", umd: "md" } as const;
 export function Locations() {
   const { lang } = useLang();
   const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState<LocationEntry | null>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -68,27 +70,23 @@ export function Locations() {
 
           {filtered.length > 0 ? (
             <div className="relative grid grid-cols-2 gap-3 md:grid-cols-5">
-              {filtered.map((loc) => {
-                const mapsQuery = encodeURIComponent(`Moby Dick House of Kabob, ${loc.address}`);
-                return (
-                  <a
-                    key={loc.city}
-                    href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={loc.address}
-                    className="block rounded-2xl border border-cream/12 bg-cream/5 px-5 py-4.5 transition-colors hover:border-teal-bright/40 hover:bg-teal/14"
-                  >
-                    <div className="text-[14.5px] font-semibold">{loc.city}</div>
-                    <div className="mt-1 font-mono text-[10.5px] opacity-50">{dict.state[loc.state][lang]}</div>
-                    {loc.badge && (
-                      <span className="mt-2 inline-block font-mono text-[9.5px] text-saffron-bright">
-                        {dict.badge[loc.badge][lang]}
-                      </span>
-                    )}
-                  </a>
-                );
-              })}
+              {filtered.map((loc) => (
+                <button
+                  key={loc.city}
+                  type="button"
+                  onClick={() => setSelected(loc)}
+                  title={loc.address}
+                  className="rtl-text-right block w-full rounded-2xl border border-cream/12 bg-cream/5 px-5 py-4.5 text-start transition-colors hover:border-teal-bright/40 hover:bg-teal/14"
+                >
+                  <div className="text-[14.5px] font-semibold">{loc.city}</div>
+                  <div className="mt-1 font-mono text-[10.5px] opacity-50">{dict.state[loc.state][lang]}</div>
+                  {loc.badge && (
+                    <span className="mt-2 inline-block font-mono text-[9.5px] text-saffron-bright">
+                      {dict.badge[loc.badge][lang]}
+                    </span>
+                  )}
+                </button>
+              ))}
             </div>
           ) : (
             <p className="relative text-sm opacity-60">{dict.locations.noResults[lang]}</p>
@@ -97,6 +95,8 @@ export function Locations() {
           <p className="relative mt-6 font-mono text-[11.5px] opacity-45">{dict.locations.footnote[lang]}</p>
         </Reveal>
       </div>
+
+      {selected && <LocationModal location={selected} onClose={() => setSelected(null)} />}
     </section>
   );
 }

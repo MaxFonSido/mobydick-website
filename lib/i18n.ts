@@ -217,6 +217,8 @@ export const dict = {
       "۳۴ شعبه‌ی فعال · برگرفته از همان سامانه‌ی یاب شعبه‌ی mobyskabob.com/locations"
     ),
     noResults: bi("No locations match your search.", "شعبه‌ای مطابق جستجوی شما یافت نشد."),
+    getDirections: bi("Get Directions", "مسیریابی"),
+    close: bi("Close", "بستن"),
   },
   state: {
     md: bi("MARYLAND", "مریلند"),
