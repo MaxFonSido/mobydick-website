@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f2c4f;
+  --color-navy-deep: #081b33;
+  --color-teal: #2fa8ad;
+  --color-teal-bright: #5fd0d1;
+  --color-saffron: #f0a830;
+  --color-saffron-bright: #ffc25c;
+  --color-cream: #faf6ee;
+  --color-paper: #f2ece0;
+  --color-ink: #0f1a24;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
+  --font-fa: var(--font-vazirmatn), var(--font-inter), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-saffron);
+  color: var(--color-navy-deep);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-fa);
+}
+
+html[dir="rtl"] .flip {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .rtl-text-right {
+  text-align: right;
+}
+
+html[dir="rtl"] .rtl-left {
+  text-align: left;
+}
+
+.pulse-dot {
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(78, 224, 138, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(78, 224, 138, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(78, 224, 138, 0);
+  }
+}
+
+.photo-zoom img {
+  transition: transform 0.5s ease;
+}
+.photo-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.rail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy) transparent;
+}
+.rail::-webkit-scrollbar {
+  height: 5px;
+}
+.rail::-webkit-scrollbar-thumb {
+  background: rgba(15, 44, 79, 0.12);
+  border-radius: 4px;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse 1000px 640px at 78% -8%, rgba(47, 168, 173, 0.5), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 4% 100%, rgba(240, 168, 48, 0.28), transparent 55%),
+    linear-gradient(180deg, var(--color-navy-deep), var(--color-navy) 60%, var(--color-navy));
+}
+
+.loc-shell-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background: radial-gradient(circle at 85% 20%, rgba(47, 168, 173, 0.35), transparent 45%);
+}
