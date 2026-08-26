@@ -50,8 +50,7 @@ export function Story() {
             {timeline.map((row, i) => (
               <div
                 key={row.yr}
-                className={`grid gap-5 py-5 ${i === 0 ? "" : "border-t border-cream/12"}`}
-                style={{ gridTemplateColumns: dir === "rtl" ? "1fr 70px" : "70px 1fr" }}
+                className={`grid grid-cols-[70px_1fr] gap-5 py-5 ${i === 0 ? "" : "border-t border-cream/12"}`}
               >
                 <div
                   className={`font-mono text-[13px] font-medium text-teal ${
