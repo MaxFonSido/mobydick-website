@@ -68,20 +68,28 @@ export function Locations() {
 
           {filtered.length > 0 ? (
             <div className="relative grid grid-cols-2 gap-3 md:grid-cols-5">
-              {filtered.map((loc) => (
-                <div
-                  key={loc.city}
-                  className="rounded-2xl border border-cream/12 bg-cream/5 px-5 py-4.5 transition-colors hover:border-teal-bright/40 hover:bg-teal/14"
-                >
-                  <div className="text-[14.5px] font-semibold">{loc.city}</div>
-                  <div className="mt-1 font-mono text-[10.5px] opacity-50">{dict.state[loc.state][lang]}</div>
-                  {loc.badge && (
-                    <span className="mt-2 inline-block font-mono text-[9.5px] text-saffron-bright">
-                      {dict.badge[loc.badge][lang]}
-                    </span>
-                  )}
-                </div>
-              ))}
+              {filtered.map((loc) => {
+                const mapsQuery = encodeURIComponent(
+                  `Moby Dick House of Kabob, ${loc.city}, ${dict.state[loc.state].en}`
+                );
+                return (
+                  <a
+                    key={loc.city}
+                    href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-2xl border border-cream/12 bg-cream/5 px-5 py-4.5 transition-colors hover:border-teal-bright/40 hover:bg-teal/14"
+                  >
+                    <div className="text-[14.5px] font-semibold">{loc.city}</div>
+                    <div className="mt-1 font-mono text-[10.5px] opacity-50">{dict.state[loc.state][lang]}</div>
+                    {loc.badge && (
+                      <span className="mt-2 inline-block font-mono text-[9.5px] text-saffron-bright">
+                        {dict.badge[loc.badge][lang]}
+                      </span>
+                    )}
+                  </a>
+                );
+              })}
             </div>
           ) : (
             <p className="relative text-sm opacity-60">{dict.locations.noResults[lang]}</p>
