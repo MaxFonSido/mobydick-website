@@ -46,7 +46,7 @@ export function Hero() {
             {dict.hero.sub[lang]}
           </p>
 
-          <div className="flip mt-9.5 flex flex-wrap gap-3.5">
+          <div className="mt-9.5 flex flex-wrap gap-3.5">
             <Link
               href="/#order"
               className="rounded-full bg-saffron px-5 py-2.75 text-[13.5px] font-semibold text-navy-deep transition hover:-translate-y-0.5 hover:bg-saffron-bright hover:shadow-[0_10px_24px_rgba(240,168,48,0.35)]"
@@ -61,7 +61,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="flip mt-14 flex flex-wrap gap-10 border-t border-cream/16 pt-8">
+          <div className="mt-14 flex flex-wrap gap-10 border-t border-cream/16 pt-8">
             <div>
               <b className="block font-display text-[28px] font-bold text-saffron-bright">1989</b>
               <span className="text-xs tracking-[0.09em] text-cream/60 uppercase">{dict.hero.meta1[lang]}</span>
@@ -78,11 +78,11 @@ export function Hero() {
         </div>
 
         <Reveal className="rounded-[22px] border border-cream/16 bg-cream/6 p-6.5 shadow-[0_30px_80px_rgba(8,27,51,0.45)] backdrop-blur-md">
-          <div className="flip mb-4.5 flex items-center justify-between">
+          <div className="mb-4.5 flex items-center justify-between">
             <span className="font-mono text-[11.5px] tracking-[0.1em] text-cream/60">
               {dict.live.label[lang]}
             </span>
-            <span className="flip flex items-center gap-1.75 font-mono text-[11.5px] text-teal-bright">
+            <span className="flex items-center gap-1.75 font-mono text-[11.5px] text-teal-bright">
               <span className="pulse-dot h-1.75 w-1.75 rounded-full bg-[#4ee08a]" />
               {dict.live.location[lang]}
             </span>
@@ -99,7 +99,7 @@ export function Hero() {
             />
           </div>
 
-          <div className="flip flex items-center gap-3.5 border-b border-cream/10 py-3">
+          <div className="flex items-center gap-3.5 border-b border-cream/10 py-3">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-saffron/18">
               <KubidehIcon />
             </div>
@@ -108,7 +108,7 @@ export function Hero() {
               <p className="mt-0.5 text-xs text-cream/55">{dict.live.dish1desc[lang]}</p>
             </div>
           </div>
-          <div className="flip flex items-center gap-3.5 py-3">
+          <div className="flex items-center gap-3.5 py-3">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/18">
               <JoojehIcon />
             </div>

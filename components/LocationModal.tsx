@@ -33,7 +33,7 @@ export function LocationModal({ location, onClose }: { location: LocationEntry; 
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-[560px] overflow-hidden rounded-[24px] border border-cream/12 bg-navy-deep text-cream shadow-[0_40px_100px_rgba(0,0,0,0.5)]"
       >
-        <div className="flip flex items-start justify-between gap-4 p-6.5 pb-4">
+        <div className="flex items-start justify-between gap-4 p-6.5 pb-4">
           <div>
             <h3 className="font-display text-xl font-bold">{location.city}</h3>
             <p className="mt-1 font-mono text-[11px] tracking-[0.1em] text-cream/50 uppercase">

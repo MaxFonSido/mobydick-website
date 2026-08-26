@@ -77,7 +77,7 @@ export function Menu() {
                   <Image src={dish.img} alt={dish.alt} fill sizes="280px" className="object-cover" unoptimized />
                 </div>
                 <div className="p-5.5">
-                  <div className="flip mb-2.5 flex gap-1.5">
+                  <div className="mb-2.5 flex gap-1.5">
                     {dish.tags.map((tag) => (
                       <span
                         key={tag}

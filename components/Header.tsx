@@ -27,18 +27,18 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-[100] py-[18px]">
       <div
-        className={`flip mx-auto flex max-w-[1220px] items-center justify-between gap-4 rounded-full border border-cream/14 py-2.5 ps-[22px] pe-[14px] backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-300 ${
+        className={`mx-auto flex max-w-[1220px] items-center justify-between gap-4 rounded-full border border-cream/14 py-2.5 ps-[22px] pe-[14px] backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-300 ${
           scrolled ? "bg-navy-deep/85" : "bg-navy/68"
         }`}
       >
-        <Link href="/#top" className="flip flex items-center gap-2.5">
+        <Link href="/#top" className="flex items-center gap-2.5">
           <LogoMark className="h-[30px] w-[30px]" />
           <span className="font-display text-[19px] font-bold text-cream">
             moby<b className="text-saffron-bright">dick</b>
           </span>
         </Link>
 
-        <nav className="flip hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -50,7 +50,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flip hidden items-center gap-2.5 md:flex">
+        <div className="hidden items-center gap-2.5 md:flex">
           <LangSwitch lang={lang} setLang={setLang} />
           <Link
             href="/#order"

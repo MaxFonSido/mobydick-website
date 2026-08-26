@@ -45,7 +45,7 @@ export function Locations() {
     <section id="locations">
       <div className="mx-auto max-w-[1220px] px-8">
         <Reveal className="loc-shell-bg relative overflow-hidden rounded-[28px] bg-navy-deep p-9 text-cream md:p-16">
-          <div className="flip relative mb-11 flex flex-wrap items-end justify-between gap-7.5">
+          <div className="relative mb-11 flex flex-wrap items-end justify-between gap-7.5">
             <div>
               <div className="inline-flex items-center gap-2.5 rounded-full border border-teal-bright/30 bg-teal/14 px-3.5 py-2 font-mono text-[11.5px] tracking-[0.16em] text-teal-bright uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-saffron" />
@@ -53,7 +53,7 @@ export function Locations() {
               </div>
               <h2 className="mt-3.5 font-display text-[34px] font-bold">{dict.locations.title[lang]}</h2>
             </div>
-            <div className="flip flex min-w-[280px] items-center gap-2.5 rounded-full border border-cream/18 bg-cream/8 py-1.5 ps-5 pe-1.5 md:min-w-[340px]">
+            <div className="flex min-w-[280px] items-center gap-2.5 rounded-full border border-cream/18 bg-cream/8 py-1.5 ps-5 pe-1.5 md:min-w-[340px]">
               <SearchIcon className="shrink-0 text-cream/50" />
               <input
                 type="text"

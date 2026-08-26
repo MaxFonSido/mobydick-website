@@ -37,10 +37,6 @@ html[dir="rtl"] body {
   font-family: var(--font-fa);
 }
 
-html[dir="rtl"] .flip {
-  flex-direction: row-reverse;
-}
-
 html[dir="rtl"] .rtl-text-right {
   text-align: right;
 }
