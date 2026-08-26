@@ -6,6 +6,19 @@ import { dict, locationList } from "@/lib/i18n";
 import { SearchIcon } from "./icons";
 import { Reveal } from "./Reveal";
 
+// USPS ZIP3 prefix ranges for the DC/MD/VA metro: coarse (state-level), not
+// per-branch, so a real ZIP falls back to "same region" rather than no match.
+function regionForZip(zip: string): "dc" | "md" | "va" | null {
+  const zip3 = parseInt(zip.slice(0, 3), 10);
+  if (Number.isNaN(zip3)) return null;
+  if (zip3 >= 200 && zip3 <= 205) return "dc";
+  if (zip3 >= 206 && zip3 <= 219) return "md";
+  if (zip3 >= 220 && zip3 <= 246) return "va";
+  return null;
+}
+
+const stateRegion = { md: "md", va: "va", dc: "dc", umd: "md" } as const;
+
 export function Locations() {
   const { lang } = useLang();
   const [query, setQuery] = useState("");
@@ -13,6 +26,13 @@ export function Locations() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return locationList;
+
+    if (/^\d{3,5}$/.test(q)) {
+      const region = regionForZip(q);
+      if (!region) return [];
+      return locationList.filter((loc) => stateRegion[loc.state] === region);
+    }
+
     return locationList.filter((loc) => {
       const stateLabel = dict.state[loc.state][lang].toLowerCase();
       return loc.city.toLowerCase().includes(q) || stateLabel.includes(q);
