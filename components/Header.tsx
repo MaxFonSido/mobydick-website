@@ -1,15 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLang } from "@/lib/LanguageContext";
 import { dict } from "@/lib/i18n";
 import { LogoMark } from "./icons";
 
 const navItems = [
-  { href: "#menu", label: dict.nav.menu },
-  { href: "#story", label: dict.nav.story },
-  { href: "#catering", label: dict.nav.catering },
-  { href: "#locations", label: dict.nav.locations },
+  { href: "/#menu", label: dict.nav.menu },
+  { href: "/#story", label: dict.nav.story },
+  { href: "/#catering", label: dict.nav.catering },
+  { href: "/#locations", label: dict.nav.locations },
 ];
 
 export function Header() {
@@ -30,39 +31,39 @@ export function Header() {
           scrolled ? "bg-navy-deep/85" : "bg-navy/68"
         }`}
       >
-        <a href="#top" className="flip flex items-center gap-2.5">
+        <Link href="/#top" className="flip flex items-center gap-2.5">
           <LogoMark className="h-[30px] w-[30px]" />
           <span className="font-display text-[19px] font-bold text-cream">
             moby<b className="text-saffron-bright">dick</b>
           </span>
-        </a>
+        </Link>
 
         <nav className="flip hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-[13.5px] font-medium text-cream/78 transition-colors hover:text-teal-bright"
             >
               {item.label[lang]}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flip hidden items-center gap-2.5 md:flex">
           <LangSwitch lang={lang} setLang={setLang} />
-          <a
-            href="#order"
+          <Link
+            href="/#order"
             className="whitespace-nowrap rounded-full border border-cream/30 px-5 py-2.5 text-[13.5px] font-semibold text-cream transition hover:border-teal-bright hover:text-teal-bright"
           >
             {dict.nav.cateringQuote[lang]}
-          </a>
-          <a
-            href="#order"
+          </Link>
+          <Link
+            href="/#order"
             className="whitespace-nowrap rounded-full bg-saffron px-5 py-2.5 text-[13.5px] font-semibold text-navy-deep transition hover:-translate-y-0.5 hover:bg-saffron-bright hover:shadow-[0_10px_24px_rgba(240,168,48,0.35)]"
           >
             {dict.nav.orderPickup[lang]}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -77,30 +78,30 @@ export function Header() {
       {mobileOpen && (
         <div className="mx-3.5 mt-2 flex flex-col gap-4 rounded-2xl border border-cream/14 bg-navy p-5 md:hidden">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className="text-[13.5px] font-medium text-cream/78"
             >
               {item.label[lang]}
-            </a>
+            </Link>
           ))}
           <LangSwitch lang={lang} setLang={setLang} />
-          <a
-            href="#order"
+          <Link
+            href="/#order"
             onClick={() => setMobileOpen(false)}
             className="rounded-full border border-cream/30 px-5 py-2.5 text-center text-[13.5px] font-semibold text-cream"
           >
             {dict.nav.cateringQuote[lang]}
-          </a>
-          <a
-            href="#order"
+          </Link>
+          <Link
+            href="/#order"
             onClick={() => setMobileOpen(false)}
             className="rounded-full bg-saffron px-5 py-2.5 text-center text-[13.5px] font-semibold text-navy-deep"
           >
             {dict.nav.orderPickup[lang]}
-          </a>
+          </Link>
         </div>
       )}
     </header>

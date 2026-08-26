@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { dict } from "@/lib/i18n";
 import { LogoMark, InstagramIcon, FacebookIcon, TikTokIcon } from "./icons";
@@ -22,15 +23,15 @@ export function Footer() {
           </div>
 
           <FootCol title={dict.footer.explore[lang]}>
-            <FootLink href="#menu">{dict.nav.menu[lang]}</FootLink>
-            <FootLink href="#catering">{dict.nav.catering[lang]}</FootLink>
-            <FootLink href="#locations">{dict.nav.locations[lang]}</FootLink>
+            <FootLink href="/#menu">{dict.nav.menu[lang]}</FootLink>
+            <FootLink href="/#catering">{dict.nav.catering[lang]}</FootLink>
+            <FootLink href="/#locations">{dict.nav.locations[lang]}</FootLink>
             <FootLink href="#">{dict.footer.specialOffers[lang]}</FootLink>
             <FootLink href="#">{dict.nav.giftcards[lang]}</FootLink>
           </FootCol>
 
           <FootCol title={dict.footer.company[lang]}>
-            <FootLink href="#story">{dict.nav.story[lang]}</FootLink>
+            <FootLink href="/#story">{dict.nav.story[lang]}</FootLink>
             <FootLink href="#">{dict.footer.visionValues[lang]}</FootLink>
             <FootLink href="#">{dict.footer.news[lang]}</FootLink>
             <FootLink href="#">{dict.footer.blog[lang]}</FootLink>
@@ -89,9 +90,9 @@ function FootCol({ title, children }: { title: string; children: React.ReactNode
 function FootLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li className="mb-2.75 text-sm opacity-72">
-      <a href={href} className="transition hover:text-saffron-bright hover:opacity-100">
+      <Link href={href} className="transition hover:text-saffron-bright hover:opacity-100">
         {children}
-      </a>
+      </Link>
     </li>
   );
 }
