@@ -48,11 +48,11 @@ export function CateringApp() {
           </span>
           <h2 className="relative mt-4 font-display text-[clamp(26px,2.6vw,36px)] font-bold">{dict.app.title[lang]}</h2>
           <p className="rtl-text-right relative mt-4 mb-7 max-w-[380px] text-[15px] opacity-82">{dict.app.desc[lang]}</p>
-          <div className="flip relative flex gap-3">
-            <div className="flip flex items-center gap-2 rounded-xl border border-cream/25 px-4 py-2.5 text-[12.5px]">
+          <div className="relative flex gap-3">
+            <div className="flex items-center gap-2 rounded-xl border border-cream/25 px-4 py-2.5 text-[12.5px]">
               <AppleIcon /> {dict.app.appstore[lang]}
             </div>
-            <div className="flip flex items-center gap-2 rounded-xl border border-cream/25 px-4 py-2.5 text-[12.5px]">
+            <div className="flex items-center gap-2 rounded-xl border border-cream/25 px-4 py-2.5 text-[12.5px]">
               <GooglePlayIcon /> {dict.app.googleplay[lang]}
             </div>
           </div>

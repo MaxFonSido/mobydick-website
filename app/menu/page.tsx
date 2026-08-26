@@ -39,9 +39,9 @@ export default function FullMenuPage() {
 
                 <div className="mt-6 divide-y divide-navy/10 border-t border-navy/10">
                   {cat.items.map((item) => (
-                    <div key={item.name.en} className="flip flex flex-wrap items-start justify-between gap-4 py-5">
+                    <div key={item.name.en} className="flex flex-wrap items-start justify-between gap-4 py-5">
                       <div className="min-w-[240px] flex-1">
-                        <div className="flip flex flex-wrap items-center gap-2.5">
+                        <div className="flex flex-wrap items-center gap-2.5">
                           <h3 className="text-[16.5px] font-bold">{item.name[lang]}</h3>
                           {item.tags.map((tag) => (
                             <span

@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1220px] px-8">
         <div className="grid gap-10 border-b border-cream/16 pb-15 md:grid-cols-[1.3fr_1fr_1fr_1fr_1.1fr]">
           <div>
-            <div className="flip mb-4 flex items-center gap-2.5">
+            <div className="mb-4 flex items-center gap-2.5">
               <LogoMark className="h-7 w-7" />
               <span className="font-display text-[19px] font-bold">
                 moby<b className="text-saffron-bright">dick</b>
@@ -57,9 +57,9 @@ export function Footer() {
           </FootCol>
         </div>
 
-        <div className="flip mt-6.5 flex flex-wrap items-center justify-between gap-3.5 pt-6 text-[12.5px] opacity-50">
+        <div className="mt-6.5 flex flex-wrap items-center justify-between gap-3.5 pt-6 text-[12.5px] opacity-50">
           <span>{dict.footer.copyright[lang]}</span>
-          <div className="flip flex gap-4">
+          <div className="flex gap-4">
             <a href="#" aria-label="Instagram" className="transition hover:text-saffron-bright hover:opacity-100">
               <InstagramIcon />
             </a>
