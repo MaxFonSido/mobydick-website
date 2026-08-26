@@ -253,39 +253,53 @@ export const dict = {
   },
 } as const;
 
-export const locationList: { city: string; state: keyof typeof dict.state; badge?: keyof typeof dict.badge }[] = [
-  { city: "Bethesda", state: "md", badge: "original" },
-  { city: "Georgetown", state: "dc" },
-  { city: "Dupont Circle", state: "dc" },
-  { city: "Arlington", state: "va" },
-  { city: "Shirlington", state: "va" },
-  { city: "Falls Church", state: "va" },
-  { city: "McLean", state: "va" },
-  { city: "Tyson's Corner", state: "va" },
-  { city: "Annandale", state: "va" },
-  { city: "Fairfax City", state: "va" },
-  { city: "Fairfax", state: "va" },
-  { city: "Kingstowne", state: "va" },
-  { city: "Springfield", state: "va" },
-  { city: "Herndon", state: "va" },
-  { city: "Sterling", state: "va" },
-  { city: "Ashburn", state: "va" },
-  { city: "Manassas", state: "va" },
-  { city: "Gainesville", state: "va" },
-  { city: "Great Falls", state: "va", badge: "nowOpen" },
-  { city: "Potomac", state: "md" },
-  { city: "Cabin John", state: "md", badge: "nowOpen" },
-  { city: "Kensington", state: "md" },
-  { city: "Rockville", state: "md" },
-  { city: "North Bethesda", state: "md" },
-  { city: "Gaithersburg", state: "md" },
-  { city: "Germantown", state: "md" },
-  { city: "Olney", state: "md" },
-  { city: "Burtonsville", state: "md" },
-  { city: "UMD", state: "umd" },
-  { city: "Pikesville", state: "md" },
-  { city: "Baltimore", state: "md" },
-  { city: "Urbana", state: "md" },
-  { city: "Buckeystown", state: "md" },
-  { city: "Annapolis", state: "md", badge: "newest" },
+export interface LocationEntry {
+  city: string;
+  state: keyof typeof dict.state;
+  badge?: keyof typeof dict.badge;
+  /** Street address, cross-checked against Yelp/Tripadvisor listings via web search. */
+  address: string;
+}
+
+// Addresses sourced from public listings (Yelp, Tripadvisor, ezCater, etc.), not
+// the business's own site. A few are lower-confidence — flagged inline — worth
+// a manual double-check before relying on them for anything customer-facing.
+export const locationList: LocationEntry[] = [
+  { city: "Bethesda", state: "md", badge: "original", address: "7023 Wisconsin Ave, Bethesda, MD" },
+  { city: "Georgetown", state: "dc", address: "1070 31st St NW, Washington, DC 20007" },
+  { city: "Dupont Circle", state: "dc", address: "1300 Connecticut Ave NW, Washington, DC 20036" },
+  { city: "Arlington", state: "va", address: "3000 Washington Blvd, Arlington, VA 22201" },
+  { city: "Shirlington", state: "va", address: "4037 Campbell Ave, Arlington, VA 22206" },
+  { city: "Falls Church", state: "va", address: "444 W Broad St, Falls Church, VA 22046" },
+  { city: "McLean", state: "va", address: "6854 Old Dominion Dr, McLean, VA" },
+  { city: "Tyson's Corner", state: "va", address: "1500 Cornerside Blvd, Tysons Corner, VA 22182" },
+  { city: "Annandale", state: "va", address: "7042 Little River Turnpike, Suite J, Annandale, VA 22003" },
+  { city: "Fairfax City", state: "va", address: "9940-A Fairfax Blvd, Fairfax, VA 22030" },
+  { city: "Fairfax", state: "va", address: "12154 Fairfax Towne Center, Fairfax, VA 22033" },
+  { city: "Kingstowne", state: "va", address: "5900 Kingstowne Towne Center, Alexandria, VA 22315" },
+  { city: "Springfield", state: "va", address: "7116 Old Keene Mill Rd, Springfield, VA 22150" },
+  { city: "Herndon", state: "va", address: "12975-A Highland Crossing Dr, Herndon, VA 20171" },
+  { city: "Sterling", state: "va", address: "22000 Dulles Retail Plaza, Sterling, VA 20166" },
+  // Ashburn: only a partial address turned up (no street-type suffix confirmed) — verify before use.
+  { city: "Ashburn", state: "va", address: "20020 Ashbrook Commons Plaza, Ashburn, VA 20147" },
+  { city: "Manassas", state: "va", address: "7223 Centreville Rd, Manassas, VA 20111" },
+  { city: "Gainesville", state: "va", address: "14035 Promenade Commons St, Gainesville, VA 20155" },
+  { city: "Great Falls", state: "va", badge: "nowOpen", address: "9902 Georgetown Pike, Great Falls, VA 22066" },
+  { city: "Potomac", state: "md", address: "9812 Falls Rd, Potomac, MD 20854" },
+  // Cabin John: nearest listed address is a Potomac-addressed location on Seven Locks Rd
+  // near Cabin John — matched by proximity, not a confirmed "Cabin John" listing. Verify.
+  { city: "Cabin John", state: "md", badge: "nowOpen", address: "11325 Seven Locks Rd, Suite 180, Potomac, MD 20854" },
+  { city: "Kensington", state: "md", address: "10506-A Connecticut Ave, Kensington, MD 20895" },
+  { city: "Rockville", state: "md", address: "14929-A Shady Grove Rd, Rockville, MD 20850" },
+  { city: "North Bethesda", state: "md", address: "11431-A Rockville Pike, North Bethesda, MD 20852" },
+  { city: "Gaithersburg", state: "md", address: "105 Market St, Gaithersburg, MD 20878" },
+  { city: "Germantown", state: "md", address: "12844 Pinnacle Dr, Germantown, MD 20874" },
+  { city: "Olney", state: "md", address: "18103 Village Center Dr, Olney, MD 20832" },
+  { city: "Burtonsville", state: "md", address: "15783 Old Columbia Pike, Burtonsville, MD 20866" },
+  { city: "UMD", state: "umd", address: "2126 Campus Dr, College Park, MD 20742" },
+  { city: "Pikesville", state: "md", address: "1809 Reisterstown Rd, Suite 135, Pikesville, MD 21208" },
+  { city: "Baltimore", state: "md", address: "727 W 40th St, Baltimore, MD 21211" },
+  { city: "Urbana", state: "md", address: "3321 Worthington Blvd, Ijamsville, MD 21754" },
+  { city: "Buckeystown", state: "md", address: "5010 Buckeystown Pike, Suite 112, Frederick, MD 21704" },
+  { city: "Annapolis", state: "md", badge: "newest", address: "2496 Riva Rd, Suite 430, Annapolis, MD 21401" },
 ];
