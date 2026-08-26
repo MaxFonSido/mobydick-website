@@ -77,6 +77,7 @@ export const dict = {
       "Contains or may contain raw undercooked ingredients. Consuming raw or undercooked eggs, steaks, hamburgers, fish, and seafood may increase your risk of food-borne illnesses. We use nuts and nut-based oil in some of our menu items. If you are allergic to nuts, or any other food, please let your server know.",
       "این غذا حاوی مواد اولیه‌ی خام یا نیم‌پز است یا ممکن است باشد. مصرف تخم‌مرغ، استیک، همبرگر، ماهی و غذاهای دریایی خام یا نیم‌پز می‌تواند خطر بیماری‌های ناشی از غذا را افزایش دهد. ما در برخی از اقلام منوی خود از آجیل و روغن‌های حاوی آجیل استفاده می‌کنیم. اگر به آجیل یا هر ماده‌ی غذایی دیگری حساسیت دارید، لطفاً به سرویس‌دهنده اطلاع دهید."
     ),
+    noPhoto: bi("Photo coming soon", "به‌زودی عکس اضافه می‌شود"),
   },
   dish: {
     kubideh: {

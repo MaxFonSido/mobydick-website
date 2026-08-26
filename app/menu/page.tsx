@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -37,28 +38,48 @@ export default function FullMenuPage() {
                 <h2 className="font-display text-2xl font-bold">{cat.category[lang]}</h2>
                 {cat.note && <p className="rtl-text-right mt-2 max-w-[720px] text-sm opacity-65">{cat.note[lang]}</p>}
 
-                <div className="mt-6 divide-y divide-navy/10 border-t border-navy/10">
+                <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
                   {cat.items.map((item) => (
-                    <div key={item.name.en} className="flex flex-wrap items-start justify-between gap-4 py-5">
-                      <div className="min-w-[240px] flex-1">
-                        <div className="flex flex-wrap items-center gap-2.5">
-                          <h3 className="text-[16.5px] font-bold">{item.name[lang]}</h3>
+                    <div
+                      key={item.name.en}
+                      className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(15,44,79,0.1)]"
+                    >
+                      <div className="relative h-[120px] bg-paper">
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt={item.name.en}
+                            fill
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center text-xs text-navy/30">
+                            {dict.fullMenu.noPhoto[lang]}
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-4">
+                        <div className="flex flex-wrap gap-1.5">
                           {item.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full bg-paper px-2 py-0.75 font-mono text-[9.5px] tracking-[0.06em] text-navy opacity-70"
+                              className="rounded-full bg-paper px-1.5 py-0.5 font-mono text-[9px] tracking-[0.05em] text-navy opacity-70"
                             >
                               {dict.tag[tag][lang]}
                             </span>
                           ))}
                         </div>
+                        <h3 className="mt-2 text-[14.5px] font-bold">{item.name[lang]}</h3>
                         {item.desc && (
-                          <p className="rtl-text-right mt-1.5 max-w-[620px] text-sm opacity-65">{item.desc[lang]}</p>
+                          <p className="rtl-text-right mt-1 line-clamp-3 text-xs leading-[1.5] opacity-65">
+                            {item.desc[lang]}
+                          </p>
+                        )}
+                        {item.calories && (
+                          <span className="mt-2 block font-mono text-[11px] text-teal">{item.calories}</span>
                         )}
                       </div>
-                      {item.calories && (
-                        <span className="font-mono text-[12.5px] whitespace-nowrap text-teal">{item.calories}</span>
-                      )}
                     </div>
                   ))}
                 </div>

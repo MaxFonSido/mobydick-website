@@ -11,6 +11,7 @@ export interface FullMenuItem {
   desc?: Bi;
   calories?: string;
   tags: MenuTag[];
+  image?: string;
 }
 
 export interface FullMenuCategory {
@@ -31,6 +32,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "600 cal.",
         tags: ["veg", "gf"],
+        image: "/menu/kashk-bademjan.jpg",
       },
       {
         name: bi("Must-o-Mooseer", "موسیر و ماست"),
@@ -40,6 +42,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "100 cal.",
         tags: ["veg", "gf"],
+        image: "/menu/must-o-mooseer.jpg",
       },
       {
         name: bi("Hummus", "حمص"),
@@ -49,6 +52,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "430 cal.",
         tags: ["veg", "gf"],
+        image: "/menu/hummus.jpg",
       },
       {
         name: bi("Spicy Hummus", "حمص تند"),
@@ -58,6 +62,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "70 cal.",
         tags: ["veg", "gf", "spicy"],
+        image: "/menu/spicy-hummus.jpg",
       },
       {
         name: bi("Dolmeh", "دلمه برگ مو"),
@@ -67,6 +72,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "250 cal.",
         tags: ["veg"],
+        image: "/menu/dolmeh.jpg",
       },
       {
         name: bi("Falafel", "فلافل"),
@@ -76,6 +82,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "690 cal.",
         tags: ["veg"],
+        image: "/menu/falafel-appetizer.jpg",
       },
       {
         name: bi("Chicken Wings (Bone-in Chicken)", "بال مرغ (با استخوان)"),
@@ -85,12 +92,14 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "430 cal.",
         tags: [],
+        image: "/menu/chicken-wings-appetizer.jpg",
       },
       {
         name: bi("Kookoo Sabzi", "کوکو سبزی"),
         desc: bi("Fresh greens, herbs, and eggs frittata.", "کوکویی از سبزیجات تازه، گیاهان معطر و تخم‌مرغ."),
         calories: "240 cal.",
         tags: ["veg"],
+        image: "/menu/kookoo-sabzi-appetizer.jpg",
       },
     ],
   },
@@ -105,6 +114,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "90–170 cal. (Small | Large)",
         tags: ["gf"],
+        image: "/menu/house-salad.jpg",
       },
       {
         name: bi("Shirazi Salad", "سالاد شیرازی"),
@@ -114,6 +124,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "100–300 cal.",
         tags: [],
+        image: "/menu/shirazi-salad.jpg",
       },
       {
         name: bi("Mediterranean Salad", "سالاد مدیترانه‌ای"),
@@ -123,6 +134,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "470 cal.",
         tags: ["gf"],
+        image: "/menu/mediterranean-salad.jpg",
       },
       {
         name: bi("Dressing", "سس‌ها"),
@@ -131,6 +143,7 @@ export const fullMenu: FullMenuCategory[] = [
           "سس رنچ، سس ایتالیایی، سس خانگی، سس انار."
         ),
         tags: ["gf"],
+        image: "/menu/dressing.jpg",
       },
     ],
   },
@@ -149,6 +162,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "760 cal.",
         tags: ["halal"],
+        image: "/menu/kubideh-sandwich.jpg",
       },
       {
         name: bi("Moby's Joojeh Kabob", "جوجه کباب موبی"),
@@ -158,6 +172,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "890 cal.",
         tags: ["halal"],
+        image: "/menu/joojeh-sandwich.jpg",
       },
       {
         name: bi("Moby's Gyro", "ژیروی موبی"),
@@ -167,6 +182,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1330 cal.",
         tags: ["halal"],
+        image: "/menu/gyro-sandwich.jpg",
       },
       {
         name: bi("Ground Chicken Kabob", "کباب مرغ چرخ‌کرده"),
@@ -176,6 +192,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "740 cal.",
         tags: ["halal", "spicy"],
+        image: "/menu/ground-chicken-sandwich.jpg",
       },
       {
         name: bi("Ground Lamb Kabob", "کباب بره چرخ‌کرده"),
@@ -185,6 +202,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "750 cal.",
         tags: ["halal", "spicy"],
+        image: "/menu/ground-lamb-sandwich.jpg",
       },
     ],
   },
@@ -202,6 +220,7 @@ export const fullMenu: FullMenuCategory[] = [
           "برنج باسماتی معطر با عدس، خرما، کشمش و پیاز کاراملی، همراه با مرغ کبابی لطیف. عدس پلو، ادویه‌زده و متعادل، غذایی پرمایه، مقوی و کاملاً سیرکننده است."
         ),
         tags: ["halal"],
+        image: "/menu/adas-polo.jpg",
       },
       {
         name: bi("* TUESDAY: Baghala Polo", "* سه‌شنبه: باقالی پلو"),
@@ -211,6 +230,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1180 cal.",
         tags: ["halal"],
+        image: "/menu/baghala-polo.jpg",
       },
       {
         name: bi("WEDNESDAY: Khoresht Gheymeh Bademjan", "چهارشنبه: خورش قیمه بادمجان"),
@@ -220,6 +240,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "870 cal.",
         tags: ["halal"],
+        image: "/menu/khoresht-gheymeh-bademjan.jpg",
       },
       {
         name: bi("THURSDAY: Zereshk Polo", "پنجشنبه: زرشک پلو"),
@@ -229,6 +250,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1100 cal.",
         tags: ["halal"],
+        image: "/menu/zereshk-polo.jpg",
       },
       {
         name: bi("* FRIDAY: Ghormeh Sabzi", "* جمعه: قورمه سبزی"),
@@ -238,6 +260,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1010 cal.",
         tags: ["halal"],
+        image: "/menu/ghormeh-sabzi.jpg",
       },
     ],
   },
@@ -256,6 +279,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "700 cal.",
         tags: ["halal", "gf", "spicy"],
+        image: "/menu/ground-chicken-entree.jpg",
       },
       {
         name: bi("Kubideh Kabob", "کباب کوبیده"),
@@ -265,6 +289,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "390 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/kubideh-entree.jpg",
       },
       {
         name: bi("Ground Lamb Kabob", "کباب بره چرخ‌کرده"),
@@ -274,6 +299,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "380 cal.",
         tags: ["halal", "gf", "spicy"],
+        image: "/menu/ground-lamb-entree.jpg",
       },
       {
         name: bi("* Barreh Kabob", "* کباب برّه"),
@@ -283,6 +309,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "330 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/barreh-entree.jpg",
       },
       {
         name: bi("* Chenjeh Kabob", "* کباب چنجه"),
@@ -292,6 +319,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "420 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/chenjeh-entree.jpg",
       },
       {
         name: bi("Salmon Kabob", "کباب ماهی سالمون"),
@@ -301,6 +329,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "410 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/salmon-entree.jpg",
       },
       {
         name: bi("Joojeh Kabob", "جوجه کباب"),
@@ -310,6 +339,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "320 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/joojeh-entree.jpg",
       },
       {
         name: bi("Moby Dick's Combo I", "کمبوی شماره ۱ موبی دیک"),
@@ -319,6 +349,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "620 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/combo-1-entree.jpg",
       },
       {
         name: bi("Moby Dick's Combo II", "کمبوی شماره ۲ موبی دیک"),
@@ -328,6 +359,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "510 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/combo-2-entree.jpg",
       },
       {
         name: bi("Moby Dick's Combo III", "کمبوی شماره ۳ موبی دیک"),
@@ -337,6 +369,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "530 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/combo-3-entree.jpg",
       },
       {
         name: bi("Moby Dick's Super Combo", "سوپر کمبوی موبی دیک"),
@@ -346,6 +379,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "650–740 cal. (Barreh | Chenjeh)",
         tags: ["halal", "gf"],
+        image: "/menu/super-combo-entree.jpg",
       },
       {
         name: bi("Moby's Gyro", "ژیروی موبی"),
@@ -355,6 +389,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "760 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/gyro-entree.jpg",
       },
       {
         name: bi("Chicken Wings (Bone-in Chicken)", "بال مرغ (با استخوان)"),
@@ -364,6 +399,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "430 cal.",
         tags: [],
+        image: "/menu/chicken-wings-entree.jpg",
       },
     ],
   },
@@ -382,6 +418,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1200 cal.",
         tags: [],
+        image: "/menu/falafel-sandwich.jpg",
       },
       {
         name: bi("Veggie Kabob With Rice", "کباب سبزیجات با برنج"),
@@ -391,6 +428,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "730 cal.",
         tags: ["gf"],
+        image: "/menu/veggie-kabob-rice.jpg",
       },
       {
         name: bi("Falafel Entrée", "غذای اصلی فلافل"),
@@ -400,6 +438,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "1280 cal.",
         tags: [],
+        image: "/menu/falafel-entree.jpg",
       },
       {
         name: bi("Kookoo Sabzi Sandwich", "ساندویچ کوکو سبزی"),
@@ -409,6 +448,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "650 cal.",
         tags: ["veg"],
+        image: "/menu/kookoo-sabzi-sandwich.jpg",
       },
       {
         name: bi("Kookoo Sabzi", "کوکو سبزی"),
@@ -418,6 +458,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "540–740 cal.",
         tags: ["veg"],
+        image: "/menu/kookoo-sabzi-entree.jpg",
       },
     ],
   },
@@ -432,6 +473,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "50–100 cal. (Small | Large)",
         tags: ["gf"],
+        image: "/menu/must-o-kheyar.jpg",
       },
       {
         name: bi("Seer Torshi", "ترشی سیر"),
@@ -441,6 +483,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "70–130 cal. (Small | Large)",
         tags: ["gf"],
+        image: "/menu/seer-torshi.jpg",
       },
       {
         name: bi("Torshi", "ترشی مخلوط"),
@@ -450,22 +493,26 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "30–60 cal. (Small | Large)",
         tags: ["gf"],
+        image: "/menu/torshi.jpg",
       },
       {
         name: bi("Bread", "نان"),
         desc: bi("Moby Dick's famous freshly baked whole pita bread.", "نان پیتای تازه و کامل معروف موبی دیک."),
         calories: "200 cal.",
         tags: [],
+        image: "/menu/bread.jpg",
       },
       {
         name: bi("Moby Dick's Signature Kubideh Kabob (Skewer)", "سیخ کباب کوبیده‌ی امضادار موبی دیک"),
         calories: "190 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/kubideh-skewer.jpg",
       },
       {
         name: bi("Moby Dick's Signature Chenjeh Kabob (Skewer)", "سیخ کباب چنجه‌ی امضادار موبی دیک"),
         calories: "420 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/chenjeh-skewer.jpg",
       },
       {
         name: bi("Moby Dick's Signature Lamb Kabob (Skewer)", "سیخ کباب بره‌ی امضادار موبی دیک"),
@@ -476,26 +523,31 @@ export const fullMenu: FullMenuCategory[] = [
         name: bi("Moby Dick's Signature Joojeh Kabob (Skewer)", "سیخ کباب جوجه‌ی امضادار موبی دیک"),
         calories: "320 cal.",
         tags: ["halal", "gf"],
+        image: "/menu/joojeh-skewer.jpg",
       },
       {
         name: bi("Moby Dick's Signature Ground Chicken Kabob (Skewer)", "سیخ کباب مرغ چرخ‌کرده‌ی امضادار موبی دیک"),
         calories: "350 cal.",
         tags: ["halal", "gf", "spicy"],
+        image: "/menu/ground-chicken-skewer.jpg",
       },
       {
         name: bi("Moby Dick's Signature Ground Lamb Kabob (Skewer)", "سیخ کباب بره‌ی چرخ‌کرده‌ی امضادار موبی دیک"),
         calories: "190 cal.",
         tags: ["halal", "gf", "spicy"],
+        image: "/menu/ground-lamb-skewer.jpg",
       },
       {
         name: bi("Moby Dick's Signature Salmon Kabob (Skewer)", "سیخ کباب سالمون امضادار موبی دیک"),
         calories: "410 cal.",
         tags: ["gf"],
+        image: "/menu/salmon-skewer.jpg",
       },
       {
         name: bi("Veggie Kabob", "کباب سبزیجات"),
         calories: "150 cal.",
         tags: ["gf"],
+        image: "/menu/veggie-kabob.jpg",
       },
       {
         name: bi("Sabzi", "سبزی خوردن"),
@@ -506,11 +558,13 @@ export const fullMenu: FullMenuCategory[] = [
         name: bi("Chutney", "چاتنی"),
         calories: "25 cal.",
         tags: ["gf"],
+        image: "/menu/chutney.jpg",
       },
       {
         name: bi("Rice", "برنج"),
         calories: "270–500 cal. (Small | Large)",
         tags: ["gf"],
+        image: "/menu/rice.jpg",
       },
     ],
   },
@@ -525,6 +579,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "330 cal.",
         tags: [],
+        image: "/menu/baklava.jpg",
       },
       {
         name: bi("Saffron Ice Cream", "بستنی زعفرانی"),
@@ -534,6 +589,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "330 cal.",
         tags: [],
+        image: "/menu/saffron-ice-cream.jpg",
       },
       {
         name: bi("Moby Cookie", "کوکی موبی"),
@@ -543,6 +599,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "370 cal.",
         tags: [],
+        image: "/menu/moby-cookie.jpg",
       },
     ],
   },
@@ -566,6 +623,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "170 cal.",
         tags: ["gf"],
+        image: "/menu/bottled-doogh.jpg",
       },
       {
         name: bi("Beverages", "نوشیدنی‌ها"),
@@ -583,6 +641,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "54 cal.",
         tags: ["gf"],
+        image: "/menu/pomegranate-juice.jpg",
       },
     ],
   },
@@ -601,6 +660,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "3480–3570 cal. (Barreh | Chenjeh)",
         tags: ["gf"],
+        image: "/menu/family-platter-1.jpg",
       },
       {
         name: bi("Platter #2 (Serves 5 to 6)", "پلاتر شماره ۲ (برای ۵ تا ۶ نفر)"),
@@ -610,6 +670,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "5250–5430 cal. (Barreh | Chenjeh)",
         tags: ["gf"],
+        image: "/menu/family-platter-2.jpg",
       },
       {
         name: bi("Chicken Wing Platter (Serves 5 to 6)", "پلاتر بال مرغ (برای ۵ تا ۶ نفر)"),
@@ -619,6 +680,7 @@ export const fullMenu: FullMenuCategory[] = [
         ),
         calories: "2100 cal.",
         tags: [],
+        image: "/menu/chicken-wing-platter.jpg",
       },
     ],
   },
@@ -631,6 +693,7 @@ export const fullMenu: FullMenuCategory[] = [
         desc: bi("Creamy barley soup with slow-cooked vegetables.", "سوپ جوی خامه‌ای با سبزیجات آرام‌پز شده."),
         calories: "100 cal.",
         tags: [],
+        image: "/menu/barley-soup.jpg",
       },
       {
         name: bi("Ab-Doogh-Kheyar", "آب‌دوغ خیار"),
@@ -639,6 +702,7 @@ export const fullMenu: FullMenuCategory[] = [
           "سوپ سرد سنتی ایرانی با طعمی تند و تازه‌کننده. این سوپ به‌طور سنتی در تابستان صرف می‌شود و تجربه‌ای خنک و سبک ارائه می‌دهد."
         ),
         tags: [],
+        image: "/menu/ab-doogh-kheyar.jpg",
       },
     ],
   },
