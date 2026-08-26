@@ -57,6 +57,26 @@ export const dict = {
     halal: bi("HALAL", "حلال"),
     gf: bi("GF*", "بدون گلوتن*"),
     veg: bi("VEGETARIAN", "گیاهی"),
+    spicy: bi("SPICY", "تند"),
+  },
+  fullMenu: {
+    backLink: bi("← Back to Home", "← بازگشت به صفحه اصلی"),
+    kicker: bi("The Full Menu", "منوی کامل"),
+    title: bi("Everything off the grill.", "همه‌چیز، مستقیم از روی آتش."),
+    desc: bi(
+      "Every category, every dish — appetizers through dessert. All halal, most gluten-free without bread.",
+      "همه‌ی دسته‌ها، همه‌ی غذاها — از پیش‌غذا تا دسر. همه حلال، بیشترشان بدون نان بدون گلوتن."
+    ),
+    glutenFreeTitle: bi("Moby Dick's Gluten Free Options", "گزینه‌های بدون گلوتن موبی دیک"),
+    glutenFreeText: bi(
+      "Please know that we practice caution and proper procedures when preparing gluten-free items, however, gluten is present in all of our kitchens. All ingredients have been verified as gluten-free by the third-party consultant, MenuTrinfo®, LLC, but our products can change at any time and the products listed might not always be the products served. Moby Dick cannot be held responsible for ingredient substitutions made by our manufacturers. In consuming our gluten-free items, be aware that there still may be a chance of cross-contact so we cannot guarantee these products for those with Celiac disease or food allergy. Guests are advised to consider this information as it relates to their individual dietary needs and requirements.",
+      "لطفاً توجه داشته باشید که ما در تهیه‌ی غذاهای بدون گلوتن نهایت دقت و رویه‌های صحیح را رعایت می‌کنیم، اما گلوتن در تمام آشپزخانه‌های ما حضور دارد. تمام مواد اولیه توسط مشاور شخص ثالث، MenuTrinfo®، LLC به‌عنوان بدون گلوتن تأیید شده‌اند، اما محصولات ما ممکن است در هر زمان تغییر کنند و اقلام فهرست‌شده همیشه دقیقاً همان چیزی نباشند که سرو می‌شود. موبی دیک مسئولیتی در قبال جایگزینی مواد اولیه توسط تولیدکنندگان ما ندارد. هنگام مصرف اقلام بدون گلوتن ما، توجه داشته باشید که همچنان احتمال تماس متقابل وجود دارد، بنابراین نمی‌توانیم این محصولات را برای افراد مبتلا به بیماری سلیاک یا حساسیت غذایی تضمین کنیم. به مهمانان توصیه می‌شود این اطلاعات را با توجه به نیازها و الزامات غذایی فردی خود در نظر بگیرند."
+    ),
+    noticeTitle: bi("* Notice", "* توجه"),
+    noticeText: bi(
+      "Contains or may contain raw undercooked ingredients. Consuming raw or undercooked eggs, steaks, hamburgers, fish, and seafood may increase your risk of food-borne illnesses. We use nuts and nut-based oil in some of our menu items. If you are allergic to nuts, or any other food, please let your server know.",
+      "این غذا حاوی مواد اولیه‌ی خام یا نیم‌پز است یا ممکن است باشد. مصرف تخم‌مرغ، استیک، همبرگر، ماهی و غذاهای دریایی خام یا نیم‌پز می‌تواند خطر بیماری‌های ناشی از غذا را افزایش دهد. ما در برخی از اقلام منوی خود از آجیل و روغن‌های حاوی آجیل استفاده می‌کنیم. اگر به آجیل یا هر ماده‌ی غذایی دیگری حساسیت دارید، لطفاً به سرویس‌دهنده اطلاع دهید."
+    ),
   },
   dish: {
     kubideh: {

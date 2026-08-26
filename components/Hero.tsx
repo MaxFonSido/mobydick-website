@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { dict } from "@/lib/i18n";
 import { JoojehIcon, KubidehIcon } from "./icons";
@@ -46,18 +47,18 @@ export function Hero() {
           </p>
 
           <div className="flip mt-9.5 flex flex-wrap gap-3.5">
-            <a
-              href="#order"
+            <Link
+              href="/#order"
               className="rounded-full bg-saffron px-5 py-2.75 text-[13.5px] font-semibold text-navy-deep transition hover:-translate-y-0.5 hover:bg-saffron-bright hover:shadow-[0_10px_24px_rgba(240,168,48,0.35)]"
             >
               {dict.nav.orderPickup[lang]}
-            </a>
-            <a
-              href="#locations"
+            </Link>
+            <Link
+              href="/#locations"
               className="rounded-full border border-cream/30 px-5 py-2.75 text-[13.5px] font-semibold text-cream transition hover:border-teal-bright hover:text-teal-bright"
             >
               {dict.hero.findLocation[lang]}
-            </a>
+            </Link>
           </div>
 
           <div className="flip mt-14 flex flex-wrap gap-10 border-t border-cream/16 pt-8">
