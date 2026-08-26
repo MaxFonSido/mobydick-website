@@ -31,6 +31,12 @@ export const metadata: Metadata = {
   title: "Moby Dick House of Kabob — Persian Kabob, Reimagined",
   description:
     "Flame-grilled Persian kabob, built on authenticity. Family-owned across DC, Maryland & Virginia since 1989. All proteins halal.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
 };
 
 export default function RootLayout({
